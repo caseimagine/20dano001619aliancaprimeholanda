@@ -9,7 +9,7 @@
 <p><span translate="Profile.MandatoryFields"></span></p>
 
 <form name="userForm" ng-submit="submitForm(userForm.$valid)" ng-if="titular">
-    <fieldset ng-repeat="atribuido in formulario.lists['Campos definidos'] | groupBy:'atribuicao'" ng-disabled="disableFields()">
+    <fieldset ng-repeat="atribuido in formulario.lists['Campos definidos'] | groupBy:'atribuicao'" ng-disabled="disableFields()"  ng-hide="atribuido[0].atribuicao === 'Acompanhante' && titular.Origem === '1' ">
 
         <h3>
             {{atribuido[0].atribuicao | translate}}
